@@ -1,0 +1,54 @@
+/**
+ * Copyright (C) 2017 Lucifer Wong
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ */
+package priv.lucife.utils.core.datastructure;
+
+import priv.lucife.utils.core.annotation.UBTDS;
+
+/**
+ * 记录栈的最大存储容量和栈中内容实际索引值
+ * 
+ * @author Lucifer Wong
+ * 
+ */
+@UBTDS
+public class StackCapacity<T> extends Stack<T> {
+	private int capacity;
+	private int index = 0;
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
+	public StackCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+	public void push(T data) {
+		super.push(data);
+		index++;
+	}
+
+	public T pop() {
+		index--;
+		return super.pop();
+	}
+
+	public boolean isFull() {
+		return (index == capacity);
+	}
+}
