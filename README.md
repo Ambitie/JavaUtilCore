@@ -22,7 +22,7 @@
 
 JavaUtilCore a simple tool for development .  As [Lucifer] writes on the [JavaUtilCore site][project]
 
->To facilitate your use, this code uses the loose Apache 2 protocol
+>To facilitate your use, this code uses the  Apache License, Version 2.0 
 
 
 ### priv.lucife.utils.core.annotation
